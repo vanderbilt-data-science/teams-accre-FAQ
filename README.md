@@ -1,76 +1,42 @@
-# repo-template-python
-This is a template repository for data science projects done in Python.
+# DS Teams - ACCRE FAQ/Troubleshooting
 
-### Prerequisites
-To most easily run this code out of the box, the following packages must be installed:
-* pandas
-* numpy
-* scikit-learn
-* matplotlib
-* seaborn
-* great expectations
-* h2o
-* fastai
 
-This is easiest to achieve through first installing an Anaconda distribution, which installs the first 5 packages and all of their dependencies.  The install directions to the other packages may be found on their documentation pages.
+# Logging on to ACCRE
 
-# Quick navigation
-[Background](#background)  
-[Data](#data)  
-[Models](#models)  
-[Timeline](#timeline)  
-[Logistics](#project-logistics)  
+## Method 1: Visualization Portal
 
-# Goal
+1. Go to portal.accre.vanderbilt.edu
+2. Log on using your VUNetID as the Username and your ACCRE password (this is likely different from your VUNetID password)
+3. Use an Interactive session (RStudio or Jupyter Notebook)
 
-Provide an overview of the goals and deliverables of the project. Mention any relevant details or issues. 
+## Method 2: Using Command Line
 
-# Background  
+1. ssh vunetid@login.accre.vanderbilt.edu
+2. Enter ACCRE password (this is likely different from your VUNetID password)
+3. You should now be in your home directory
 
-Provide a broad overview of the purpose of the project.
+# Working with Large Datasets
 
-# Data
+Consider using a sample of the data instead of joining all the datasets. For example, you could sample by customer ID, perhaps which will help increase your computation time significantly and free up resources for other users.
 
-Describe the data - what kind of data is it?  Describe the general format, and potential quirks.
+# Selecting Resources
 
-## Data security
+When setting up an interactive session in RStudio or Jupyter Notebooks avoid using more resources than you need. **Unless you are using parallelization, your code is almost always running on a single core**. Do not ask for multiple cores unless you are using parallization. At most, ask for 2-3 cores. Instead, ask for more memory. In the scenario where you are using all the data combined, you will likely need at least 64GB of memory. 
 
-If there are any security concerns or requirements regarding the data, they should be described here.
+**Use the GPU only if required!!**
 
-## Counts
+# Reading and writing data
 
-Describe the overall size of the dataset and the relative ratio of positive/negative examples for each of the response variables.
+All original data provided to you by the client is stored under the following directory: /data/p_dsi/client_name/data/
+The original data should ideally stay in this directory
 
-# Models
+The teams folders under /data/p_dsi/client_name/teams/ are not for storing the client data, but instead for storing any aggregates or additional data sources required for your project. 
 
-Clearly identify each of the response variables of interest.  Any additional desired analysis should also be described here.
+**Do not write any files to your home directory.** There is also a file size limit on your home folder, so you will be unable to store any files larger than that size in your home directory. 
 
-# Timeline
+# Diagnosing crashed sessions
 
-Outline the desired timeline of the project and any explicit deadlines.
+# Frequently asked questions
 
-# Repo Structure 
+Please refer to the ACCRE FAQ for solutions to most issues: https://www.vanderbilt.edu/accre/support/faq/
 
-Give a description of how the repository is structured. Example structure description below:
-
-The repo is structured as follows: All *0- (e.g., 10-, 20-, 30-) files contain finalized work for the purpose described (e.g., "process-data"). Subfiles related to the task (e.g., 11-, 12-) should be created in order to explore and document relevant or interesting subtasks.
-
-All files which appear in the repo should be able to run, and not contain error or blank cell lines, even if they are relatively midway in development of the proposed task. All notebooks relating to the analysis should have a numerical prefix (e.g., 31-) followed by the exploration (e.g. 31-text-labeling). Any utility notebooks should not be numbered, but be named according to their purpose. All notebooks should have lowercase and hyphenated titles (e.g., 10-process-data not 10-Process-Data). All notebooks should adhere to literate programming practices (i.e., markdown writing to describe problems, assumptions, conclusions) and provide adequate although not superfluous code comments.
-
-# Project logistics
-
-**Sprint planning**:  
-**Demo**:  
-
-**Data location**:  
-
-**Slack channel**:  
-**Zoom link**:  
-
-# Resources 
-
-Provide links to any resources that may be useful in running the repo (python/git/accre tutorials etc).
-
-# Contact Info
-
-Add contact information for any project stakeholders. Include name, email and title. 
